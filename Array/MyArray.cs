@@ -10,6 +10,8 @@ namespace ArrayTask
     {
         private int[] _array;
         private int _length;
+        
+        public int Length => _length;
         public MyArray()
         {
             _length = 0;
@@ -34,6 +36,26 @@ namespace ArrayTask
             }
             Console.WriteLine();
         }
+        public void Clear()
+        {
+            _length = 0;
+            _array = new int[0];
+        }
+        public int Pop()
+        {
+            _length--;
+            int[] tmp = new int[_length];
+            for (int i = 0; i < _length; i++)
+            {
+                tmp[i] = _array[i];
+            }
+            int removed = _array[_length];
+            _array = tmp;
+            return removed;
+            
+
+        }
+
 
     }
 }
