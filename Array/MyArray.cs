@@ -80,6 +80,14 @@ namespace ArrayTask
             }
             return false;
         }
-
+        public int IndexOf(int value)
+        {
+            for(int i = 0; i < _length; i++)
+            {
+                if(value == _array[i]) //Здесь отвалится
+                    return i;
+            }
+            return -1;
+        }
     }
 }
