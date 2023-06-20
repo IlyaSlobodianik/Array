@@ -55,6 +55,23 @@ namespace ArrayTask
             
 
         }
+        public bool Insert(int index, int value)
+        {
+            if (index < 0 || index >= Length) return false;
+            _length++;
+            int[] tmp = new int[_length];
+            for (int i = 0; i < index; i++)
+            {
+                tmp[i] = _array[i];
+            }
+            tmp[index] = value;
+            for (int i = index; i < _array.Length; i++)
+            {
+                tmp[i + 1] = _array[i];
+            }
+            _array = tmp;
+            return true;
+        }
 
 
     }
