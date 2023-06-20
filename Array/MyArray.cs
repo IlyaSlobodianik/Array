@@ -10,7 +10,7 @@ namespace ArrayTask
     {
         private int[] _array;
         private int _length;
-        
+
         public int Length => _length;
         public MyArray()
         {
@@ -21,16 +21,16 @@ namespace ArrayTask
         {
             _length++;
             int[] tmp = new int[_length];
-            for(int i = 0; i < _length-1; i++)
+            for (int i = 0; i < _length - 1; i++)
             {
                 tmp[i] = _array[i];
             }
-            tmp[_length-1] = value;
+            tmp[_length - 1] = value;
             _array = tmp;
         }
         public void Print()
         {
-            foreach(int value in _array)
+            foreach (int value in _array)
             {
                 Console.Write(value + " ");
             }
@@ -52,7 +52,6 @@ namespace ArrayTask
             int removed = _array[_length];
             _array = tmp;
             return removed;
-            
 
         }
         public bool Insert(int index, int value)
@@ -71,8 +70,6 @@ namespace ArrayTask
             }
             _array = tmp;
             return true;
-        }
-
-
+        }        
     }
 }
