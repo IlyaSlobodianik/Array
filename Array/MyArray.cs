@@ -70,6 +70,16 @@ namespace ArrayTask
             }
             _array = tmp;
             return true;
-        }        
+        }
+        public bool Contains(int value)
+        {
+            foreach(int i in _array)
+            {
+                if(i == value) //Здесь отвалится 
+                    return true;
+            }
+            return false;
+        }
+
     }
 }
