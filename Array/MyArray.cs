@@ -89,5 +89,21 @@ namespace ArrayTask
             }
             return -1;
         }
+        public bool RemoveAt(int index)
+        {
+            if (index < 0 || index >= Length) return false;
+            _length--;
+            int[] tmp = new int[_length];
+            for (int i = 0; i < index; i++)
+            {
+                tmp[i] = _array[i];
+            }
+            for(int i = index + 1; i < _array.Length; i++)
+            {
+                tmp[i - 1] = _array[i];
+            }
+            _array = tmp;
+            return true;
+        }
     }
 }
