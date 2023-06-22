@@ -105,5 +105,14 @@ namespace ArrayTask
             _array = tmp;
             return true;
         }
+        public bool Remove(int value)
+        {
+            if(Contains(value))
+            {
+               RemoveAt(IndexOf(value));
+                return true;
+            }
+            else return false;
+        }
     }
 }
