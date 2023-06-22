@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Collections;
 
 namespace ArrayTask
 {
@@ -110,7 +111,7 @@ namespace ArrayTask
             if(Contains(value))
             {
                RemoveAt(IndexOf(value));
-                return true;
+               return true;
             }
             else return false;
         }

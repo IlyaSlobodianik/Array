@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayTask", "Array\ArrayTask.csproj", "{4AA0FE0D-423D-46CF-880C-153E1620C03A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayTask", "Array\ArrayTask.csproj", "{4AA0FE0D-423D-46CF-880C-153E1620C03A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections", "Collections\Collections.csproj", "{E5E7552B-9FA0-4171-9B22-16DD22B89A4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4AA0FE0D-423D-46CF-880C-153E1620C03A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AA0FE0D-423D-46CF-880C-153E1620C03A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AA0FE0D-423D-46CF-880C-153E1620C03A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5E7552B-9FA0-4171-9B22-16DD22B89A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5E7552B-9FA0-4171-9B22-16DD22B89A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5E7552B-9FA0-4171-9B22-16DD22B89A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5E7552B-9FA0-4171-9B22-16DD22B89A4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
