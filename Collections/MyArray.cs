@@ -100,5 +100,10 @@
             return true;
         }
         public bool Remove(T value) => RemoveAt(IndexOf(value));
+        public T this[int index]
+        {
+            get => _array[index];
+            set => _array[index] = value;
+        }
     }
 }
