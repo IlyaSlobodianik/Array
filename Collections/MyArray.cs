@@ -1,27 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Collections;
-
-namespace ArrayTask
+﻿namespace Collections
 {
-    internal class MyArray
+    public class MyArray<T>
     {
-        private int[] _array;
+        private T[] _array;
         private int _length;
 
         public int Length => _length;
         public MyArray()
         {
             _length = 0;
-            _array = new int[0];
+            _array = new T[0];
         }
-        public void Add(int value)
+        public void Add(T value)
         {
             _length++;
-            int[] tmp = new int[_length];
+            T[] tmp = new T[_length];
             for (int i = 0; i < _length - 1; i++)
             {
                 tmp[i] = _array[i];
@@ -31,7 +24,7 @@ namespace ArrayTask
         }
         public void Print()
         {
-            foreach (int value in _array)
+            foreach (var value in _array)
             {
                 Console.Write(value + " ");
             }
@@ -40,26 +33,26 @@ namespace ArrayTask
         public void Clear()
         {
             _length = 0;
-            _array = new int[0];
+            _array = new T[0];
         }
-        public int Pop()
+        public T Pop()
         {
             _length--;
-            int[] tmp = new int[_length];
+            T[] tmp = new T[_length];
             for (int i = 0; i < _length; i++)
             {
                 tmp[i] = _array[i];
             }
-            int removed = _array[_length];
+            T removed = _array[_length];
             _array = tmp;
             return removed;
 
         }
-        public bool Insert(int index, int value)
+        public bool Insert(int index, T value)
         {
             if (index < 0 || index >= Length) return false;
             _length++;
-            int[] tmp = new int[_length];
+            T[] tmp = new T[_length];
             for (int i = 0; i < index; i++)
             {
                 tmp[i] = _array[i];
@@ -72,20 +65,20 @@ namespace ArrayTask
             _array = tmp;
             return true;
         }
-        public bool Contains(int value)
+        public bool Contains(T value)
         {
-            foreach(int i in _array)
+            foreach (var i in _array)
             {
-                if(i == value) //Здесь отвалится 
+                if (i.Equals(value))
                     return true;
             }
             return false;
         }
-        public int IndexOf(int value)
+        public int IndexOf(T value)
         {
-            for(int i = 0; i < _length; i++)
+            for (int i = 0; i < _length; i++)
             {
-                if(value == _array[i]) //Здесь отвалится
+                if (value.Equals(_array[i]))
                     return i;
             }
             return -1;
@@ -94,26 +87,18 @@ namespace ArrayTask
         {
             if (index < 0 || index >= Length) return false;
             _length--;
-            int[] tmp = new int[_length];
+            T[] tmp = new T[_length];
             for (int i = 0; i < index; i++)
             {
                 tmp[i] = _array[i];
             }
-            for(int i = index + 1; i < _array.Length; i++)
+            for (int i = index + 1; i < _array.Length; i++)
             {
                 tmp[i - 1] = _array[i];
             }
             _array = tmp;
             return true;
         }
-        public bool Remove(int value)
-        {
-            if(Contains(value))
-            {
-               RemoveAt(IndexOf(value));
-               return true;
-            }
-            else return false;
-        }
+        public bool Remove(T value) => RemoveAt(IndexOf(value));
     }
 }
