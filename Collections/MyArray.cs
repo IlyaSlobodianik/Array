@@ -1,16 +1,22 @@
 ﻿namespace Collections
 {
-    public class MyArray<T>
+    public class MyArray<T> : IEnumerable<T>
     {
+        #region Private variables
         private T[] _array;
         private int _length;
-
+        #endregion
+        #region Properties
         public int Length => _length;
+        #endregion
+        #region Constructors
         public MyArray()
         {
             _length = 0;
             _array = new T[0];
         }
+        #endregion
+        #region Methods
         public void Add(T value)
         {
             _length++;
@@ -100,10 +106,15 @@
             return true;
         }
         public bool Remove(T value) => RemoveAt(IndexOf(value));
+        #endregion
+        #region Indexers
         public T this[int index]
         {
             get => _array[index];
             set => _array[index] = value;
         }
+        #endregion
+        
+
     }
 }
