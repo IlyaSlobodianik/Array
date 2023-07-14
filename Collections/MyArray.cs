@@ -1,4 +1,6 @@
-﻿namespace Collections
+﻿using System.Collections;
+
+namespace Collections
 {
     public class MyArray<T> : IEnumerable<T>
     {
@@ -27,15 +29,7 @@
             }
             tmp[_length - 1] = value;
             _array = tmp;
-        }
-        public void Print()
-        {
-            foreach (var value in _array)
-            {
-                Console.Write(value + " ");
-            }
-            Console.WriteLine();
-        }
+        }        
         public void Clear()
         {
             _length = 0;
@@ -114,7 +108,14 @@
             set => _array[index] = value;
         }
         #endregion
+        #region IEnumerator Implementation
         
+        IEnumerator<T> IEnumerable<T>.GetEnumerator() => ((IEnumerable<T>)_array).GetEnumerator();
+        
+        IEnumerator IEnumerable.GetEnumerator() => _array.GetEnumerator();
+        
+
+        #endregion
 
     }
 }
