@@ -9,11 +9,14 @@ namespace Collections
 {
     public class MyDictionary<TKey, TValue> :IEnumerable<KeyValuePair<TKey, TValue>>
     {
-
+        #region Private variables
         private List<TKey> _keys;
         private List<TValue> _values;
-
+        #endregion
+        #region Public properties
         public int Count => _keys.Count;
+        #endregion
+        #region Indexer
         public TValue this[TKey key]
         {
             get
@@ -36,13 +39,15 @@ namespace Collections
                     Add(key, value);
             }
         }
-
+        #endregion
+        #region Constructor
         public MyDictionary() 
         {
             _keys = new List<TKey>();
             _values = new List<TValue>();
         }
-
+        #endregion
+        #region Methods
         public void Add(TKey key, TValue value) 
         {
             if(_keys.Contains(key)) 
@@ -84,7 +89,8 @@ namespace Collections
             return false;
         }
         public bool ContainsKey(TKey key) => _keys.Contains(key);
-
+        #endregion
+        #region IEnumerable implementations
         public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
         {
             for(int i = 0; i < _keys.Count; i++)
@@ -94,6 +100,7 @@ namespace Collections
         }
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-        
+        #endregion
+
     }
 }
